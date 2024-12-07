@@ -36,5 +36,6 @@ class Database :
 
     def update(self,name,age,job,email,gender,mobile,address):
         self.cur.execute("update employees set name=?, age=?, job=?, email=?,gender=?, mobile=?, address=? where id=?",
-                         )
+                       (name,age,job,email,gender,mobile,address, id)  )
+            self.con.commit()
 
